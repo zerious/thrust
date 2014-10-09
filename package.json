@@ -1,47 +1,33 @@
 {
   "name": "thrust",
+  "version": "0.0.0",
   "description": "A Node.js deployment manager.",
+  "dependencies": {},
+  "devDependencies": {
+    "zeriousify": "^0.1.10",
+    "exam": "^0.0.8",
+    "istanbul": "0.2.11",
+    "coveralls": "2.10.0"
+  },
   "keywords": [
     "thrust"
   ],
-  "version": "0.0.0",
   "main": "thrust.js",
-  "homepage": "http://github.com/lighterio/thrust",
-  "repository": "http://github.com/lighterio/thrust.git",
-  "bugs": {
-    "url": "http://github.com/lighterio/thrust/issues"
+  "engines": {
+    "node": ">=0.2.6"
   },
-  "author": {
-    "name": "Sam Eubank",
-    "email": "sameubank@gmail.com"
-  },
-  "contributors": [
-    {
-      "name": "Sam Eubank",
-      "email": "sameubank@gmail.com"
-    }
-  ],
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/lighterio/thrust/blob/master/MIT-LICENSE.md"
-    }
-  ],
-  "engines": [
-    "node >= 0.2.6"
-  ],
   "scripts": {
     "test": "./node_modules/exam/exam.js",
-    "retest": "./node_modules/exam/exam.js --watch",
     "cover": "istanbul cover ./node_modules/exam/exam.js",
     "report": "open coverage/lcov-report/index.html",
     "coveralls": "istanbul cover ./node_modules/exam/exam.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "zeriousify": "0.1.9",
-    "exam": "0.0.5",
-    "istanbul": "0.2.11",
-    "coveralls": "2.10.0"
-  }
+  "repository": "https://github.com/lighterio/thrust.git",
+  "bugs": "https://github.com/lighterio/thrust/issues",
+  "homepage": "http://github.com/lighterio/thrust",
+  "author": "Sam Eubank <sameubank@gmail.com>",
+  "contributors": [
+    "Sam Eubank <sameubank@gmail.com>"
+  ],
+  "license": "MIT"
 }
