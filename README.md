@@ -7,8 +7,6 @@
 [![Support](https://img.shields.io/gratipay/Lighter.io.svg)](https://gratipay.com/Lighter.io/)
 
 
-## TL;DR
-
 Thrust is a deployment system that keeps track of users, hosts, host groups,
 repositories, environments and deployments. It gives you a straightforward
 web UI to coordinate your operations and a client process that keeps all of

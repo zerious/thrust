@@ -1,0 +1,26 @@
+html(lang="en")
+  head
+    if styleTags
+      : ={styleTags}
+    else
+      link(rel="stylesheet" href="/a.css?v=={cacheBust}")
+    link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,600,700|Oxygen+Mono:400")
+    link(rel="shortcut icon" href="/favicon.ico?v=={cacheBust}")
+    meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1")
+    title Thrust
+
+  body
+    #_head>._panel
+      h1>a#_logo(href="/")>img(src="/thrust.svg?v=={cacheBust}") Thrust
+    #_body>._panel
+      get content
+
+    #_foot>._panel
+
+    if scriptTags
+      script window._waitingForScripts = 1
+      : ={scriptTags}
+      // Once D6 has context, it calls onReady upon transitions, otherwise call it here.
+      script D6._context || window._onReady()
+    else
+      script(src="/a.js?v=={cacheBust}")

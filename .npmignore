@@ -1,4 +1,3 @@
-
 *.seed
 *.log
 *.csv
@@ -10,13 +9,14 @@
 .project
 .DS_Store
 .cache
+.thrust.json
 pids
-logs
+log
+data
 results
 coverage
 node_modules
 build
 test
 .travis.yml
-
 .npmignore

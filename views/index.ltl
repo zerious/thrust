@@ -1,0 +1,8 @@
+call layout/page
+
+  set title:
+    Thrust
+
+  set content
+
+    p TODO

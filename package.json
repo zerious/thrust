@@ -2,25 +2,28 @@
   "name": "thrust",
   "version": "0.0.0",
   "description": "A Node.js deployment manager.",
-  "dependencies": {},
+  "dependencies": {
+    "lighter": "^0.3.0",
+    "ringer": "^0.0.1"
+  },
   "devDependencies": {
-    "zeriousify": "^0.1.10",
-    "exam": "^0.0.8",
-    "istanbul": "0.2.11",
-    "coveralls": "2.10.0"
+    "exam": "^0.2.2"
   },
   "keywords": [
     "thrust"
   ],
   "main": "thrust.js",
+  "bin": {
+    "thrust": "thrust.js"
+  },
   "engines": {
     "node": ">=0.2.6"
   },
   "scripts": {
     "test": "./node_modules/exam/exam.js",
-    "cover": "istanbul cover ./node_modules/exam/exam.js",
+    "cover": "./node_modules/exam/exam-cover.js",
     "report": "open coverage/lcov-report/index.html",
-    "coveralls": "istanbul cover ./node_modules/exam/exam.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
+    "coveralls": "./node_modules/exam/exam-coveralls.js"
   },
   "repository": "https://github.com/lighterio/thrust.git",
   "bugs": "https://github.com/lighterio/thrust/issues",
