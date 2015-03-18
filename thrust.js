@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 if (process.mainModule == module) {
-  require(__dirname + '/common/process/cli')();
+  require('./common/process/cli')();
 }
 
 var thrust = module.exports;

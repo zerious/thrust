@@ -1,0 +1,10 @@
+call layout/page
+
+  set title:
+    Thrust - Clusters
+
+  set content
+
+    h2 Clusters
+    a._button(href="/clusters/edit") New Cluster
+

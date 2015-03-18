@@ -1,0 +1,31 @@
+call layout/page
+
+  set title:
+    Ring Test
+
+  set content
+
+    t-form(action="/ring/set" method="post" heading="Set a value")
+      t-field(label="Key" name="key" value="${key}")
+      t-field(label="Value" name="value" value="${value}")
+      t-field(type="submit" value="Set")
+
+    t-form(action="/ring/get" method="post" heading="Get a value")
+      t-field(label="Key" name="key" value="${key}")
+      t-field(type="submit" value="Get")
+
+    if key
+      br
+
+      h2 The value of "${key}" is "${value}"!
+      if peers
+        p Replicas of "${key}" are stored on the following peers:
+          b ${peers.join(", ")}
+
+    t-icon(android)
+    t-icon(ios)
+    t-icon(windows)
+    t-icon(web)
+    br
+    t-icon(search)
+    t-icon(select)

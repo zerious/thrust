@@ -1,0 +1,9 @@
+call layout/page
+
+  set title:
+    Thrust - Stages
+
+  set content
+
+    h2 Stages
+    form TODO

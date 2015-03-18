@@ -1,0 +1,7 @@
+call layout/page
+
+  set title:
+    Thrust - Clusters
+
+  set content
+    call clusters/form cluster

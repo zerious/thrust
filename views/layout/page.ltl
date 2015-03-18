@@ -1,26 +1,88 @@
 html(lang="en")
   head
-    if styleTags
-      : ={styleTags}
+    if headTags
+      : ={headTags}
     else
-      link(rel="stylesheet" href="/a.css?v=={cacheBust}")
-    link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,600,700|Oxygen+Mono:400")
-    link(rel="shortcut icon" href="/favicon.ico?v=={cacheBust}")
+      script(src="/a.js?v=={cacheBust}")
+    meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1")
     title Thrust
 
   body
-    #_head>._panel
-      h1>a#_logo(href="/")>img(src="/thrust.svg?v=={cacheBust}") Thrust
-    #_body>._panel
-      get content
 
-    #_foot>._panel
+    #_head
+      a#_logo(href="/")
+        thrust-icon(name="logo")
+        : Thrust
 
-    if scriptTags
-      script window._waitingForScripts = 1
-      : ={scriptTags}
-      // Once D6 has context, it calls onReady upon transitions, otherwise call it here.
-      script D6._context || window._onReady()
-    else
-      script(src="/a.js?v=={cacheBust}")
+    #_body
+
+      t-links#_nav(links="{'/clusters':'Clusters','/packages':'Packages'}")
+
+      #_content
+        get content
+
+      br
+
++css
+
+  #_head {
+    background: #235;
+    border: 0 solid #000;
+    border-width: 1px 0;
+    padding: 0.2em 1em;
+  }
+
+  #_logo {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 0.02em 0.04em 0.01em #000;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+
+  #_logo svg {
+    display: inline-block;
+    width: 1.6em;
+    height: 1.6em;
+    margin: 0 0.4em 0 -0.4em;
+    vertical-align: top;
+  }
+
+  #_body {
+    position: relative;
+    background: #f8f8f8;
+  }
+
+  #_nav {
+    position: absolute;
+    top: 0;
+    width: 9em;
+    bottom: 0;
+    background: #eee;
+    padding: 0.8em 0;
+  }
+
+  #_nav a {
+    color: #67b;
+    display: block;
+    padding: 0.4em 1em;
+    border-left: 0.2em solid #eee;
+  }
+
+  #_nav a:hover {
+    color: #e50;
+    background: #f8f8f8;
+    border-left: 0.2em solid #e50;
+  }
+
+  #_content {
+    margin-left: 10em;
+    padding: 1em;
+  }
+
+  #_foot {
+    color: #555;
+    font-size: 1.2em;
+  }

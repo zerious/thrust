@@ -1,8 +1,13 @@
 call layout/page
 
   set title:
-    Thrust
+    Thrust Tat Demo
 
   set content
 
-    p TODO
+    //.(style="font-size:10em")
+      t-icon(url style="border:1px solid #333")
+
+    t-form(heading="Tat Tags Demo")
+      br
+      call demo

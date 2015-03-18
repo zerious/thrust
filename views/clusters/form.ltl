@@ -1,0 +1,6 @@
+h2 Edit Cluster
+
+p cluster: ${cluster}
+p id: ${id}
+
+form(action="/clusters/edit")

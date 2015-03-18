@@ -1,38 +1,44 @@
-require(__dirname + '/common/string/colors');
+var lighter = require('lighter');
 
-var cwd = process.cwd();
+// Use single argument to set the processCount.
+var args = process.argv.slice(2);
+var processCount = isNaN(args[0]) ? 2 : args[0];
 
-var App = require(__dirname + '/node_modules/lighter')({
+// Create a new Lighter app.
+module.exports = lighter({
 
-  dir: __dirname,
+  log: [{transport: 'console'}],
 
-  logger: [{transport: 'console'}],
-
-  configPath: cwd + '/.thrust.json',
-
-  httpPort: process.env.THRUST_PORT,
+  port: 32123 || process.env.THRUST_PORT,
 
   processCount: 1,
 
-  exposeGlobals: true,
+  dbs: {
+    thrust: {
+      host: '127.0.0.1',
+      user: 'root',
+      audit: true
+    }
+  },
+
+  globalCase: 'camel',
 
   asciiArt: ['',
-    '           _~ooO@@'.white + '   _____ _                    _'.bold.gray,
-    '         /O@'.white + '/@@\\'.yellow +  '@@ '.white + ' |_   _| |__  _ __ _   _ ___| |_'.bold.gray,
-    '        @@@@'.white + '\\@@/'.yellow +  '@/'.white + '    | | | \'_ \\| \'__| | | / __| __|'.bold.gray,
-    '      /@@@@@@@@@/'.white + '     | | | | | | |  | |_| \\__ \\ |_'.bold.gray,
-    '  _o@@@@@@@@@@"'.white + '       |_| |_| |_|_|   \\__,_|___/\\__|'.bold.gray,
-    ' /@@@@@@@@@@"'.white + '      ',
-    '|@""'.white + '/'.red + '@@\\'.yellow + ''.red + '@@@@'.white + '       ',
-    '   /@'.red + '@/'.yellow + '@'.red + '@@@|'.white + '       ',
-    '   @O%"'.red + ' |@/'.white + '        ',
+    '           _~ooO@@'.base.bold + '   _____ _                    _'.bold.gray,
+    '         /O@'.bold + '/@@\\'.bold.yellow +  '@@ '.bold + ' |_   _| |__  _ __ _   _ ___| |_'.bold.gray,
+    '        @@@@'.bold + '\\@@/'.bold.yellow +  '@/'.bold + '    | | | \'_ \\| \'__| | | / __| __|'.bold.gray,
+    '     _/@@@@@@@@@/'.bold + '     | | | | | | |  | |_| \\__ \\ |_'.bold.gray,
+    ' _oo@@@@@@@@@@"'.bold + '       |_| |_| |_|_|   \\__,_|___/\\__|'.bold.gray,
+    '/@@@@@@@@@@@"'.bold + '      ',
+    '@*"'.bold + 'o'.bold.red + '/@@\\'.bold.yellow + ''.bold.red + '@@@@'.bold + '       ',
+    '  o@'.bold.red + '@@/'.bold.yellow + '@'.bold.red + '@@@|'.bold + '       ',
+    '  #@@%"'.bold.red + ' @@/'.bold + '        ',
     ''],
 
-  scripts: {
-    '/a.js': [
-      'node_modules/lighter/node_modules/jymin/plugins/md5.js',
-      'scripts'
-    ],
+  rings: {
+    thrust: {
+      replicas: 3
+    }
   }
 
 });

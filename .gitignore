@@ -9,7 +9,8 @@
 .project
 .DS_Store
 .cache
-.thrust.json
+.thrust-dev.json
+.thrust-prod.json
 pids
 log
 data
@@ -17,3 +18,5 @@ results
 coverage
 node_modules
 build
+
+logs

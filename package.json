@@ -4,7 +4,8 @@
   "description": "A Node.js deployment manager.",
   "dependencies": {
     "lighter": "^0.3.0",
-    "ringer": "^0.0.1"
+    "ringer": "^0.0.1",
+    "styl": "^0.2.9"
   },
   "devDependencies": {
     "exam": "^0.2.2"

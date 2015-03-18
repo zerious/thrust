@@ -1,0 +1,9 @@
+body,
+html {
+  background: #ccc;
+  height: 100%;
+}
+
+body {
+  border-top: 0.2em solid #e50;
+}
