@@ -1,6 +1,10 @@
 t-demo
   t-field(label="Select" type="select" options="{red:'Red',green:'Green',blue:'Blue'}" value="blue")
-  t-field(label="Multi" type="select" options="{SEA:'Seattle',SFO:'San Francisco',JFK:'New York',TLV:'Tel Aviv',GMP:'Seoul',LHR:'London',TXL:'Berlin'}" values="['SEA','SFO','JFK']")
+  t-field(label="Text" width="2em")
+
+t-demo
+  t-field(label="Multi" type="select" options="{SEA:'Seattle',SFO:'San Francisco',JFK:'New York',TLV:'Tel Aviv',GMP:'Seoul',LHR:'London',TXL:'Berlin'}" values="['SEA','TLV']")
+  t-field(label="Text" width="2em")
 
 t-demo
   t-field(label="Text" value="A value")
