@@ -11,7 +11,7 @@ module.exports = lighter({
 
   port: 32123 || process.env.THRUST_PORT,
 
-  processCount: 2,
+  processCount: 1,
 
   dbs: {
     thrust: {
@@ -37,7 +37,7 @@ module.exports = lighter({
 
   rings: {
     thrust: {
-      hostPattern: '(bunny|sam).local',
+      //hostPattern: '(bunny|sam).local',
       replicas: 3
     }
   }
